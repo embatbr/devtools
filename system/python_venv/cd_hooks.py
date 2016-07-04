@@ -1,7 +1,7 @@
-SERVICES = '/home/embat/data/professional/Catho/appletini/service'
+SERVICES = '/home/embat/data/professional/Catho/appletini/services'
 
 hooks = {
-    '%s/business-logic/' % SERVICES : 'aptn-business'
+    '%s/business' % SERVICES : 'aptn-business'
 }
 
 
