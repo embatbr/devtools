@@ -1,7 +1,9 @@
-SERVICES = '/home/embat/data/professional/Catho/appletini/services'
+HOME = '/home/embat'
+SERVICES = '%s/data/professional/Catho/appletini/services' % HOME
 
 hooks = {
-    '%s/business' % SERVICES : 'aptn-business'
+    '%s/business' % SERVICES : 'aptn-business',
+    '%s/programming/system' % HOME : 'system-python'
 }
 
 
