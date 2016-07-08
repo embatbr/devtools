@@ -3,7 +3,9 @@ SERVICES = '%s/data/professional/Catho/appletini/services' % HOME
 
 hooks = {
     '%s/business' % SERVICES : 'aptn-business',
-    '%s/programming/system' % HOME : 'system-python'
+    '%s/presentation' % SERVICES : 'aptn-presentation',
+    '%s/storage' % SERVICES : 'aptn-storage',
+    '%s/programming/system/python_venv' % HOME : 'system-python'
 }
 
 
