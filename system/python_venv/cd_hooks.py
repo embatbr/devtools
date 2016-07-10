@@ -1,11 +1,13 @@
 HOME = '/home/embat'
-SERVICES = '%s/data/professional/Catho/appletini/services' % HOME
+CATHO_SERVICES = '%s/data/professional/Catho/appletini/services' % HOME
+VIVAREAL_SERVICES = '%s/data/professional/VivaReal/solution' % HOME
 
 hooks = {
-    '%s/business' % SERVICES : 'aptn-business',
-    '%s/presentation' % SERVICES : 'aptn-presentation',
-    '%s/storage' % SERVICES : 'aptn-storage',
-    '%s/programming/system/python_venv' % HOME : 'system-python'
+    '%s/business' % CATHO_SERVICES : 'aptn-business',
+    '%s/presentation' % CATHO_SERVICES : 'aptn-presentation',
+    '%s/storage' % CATHO_SERVICES : 'aptn-storage',
+    '%s/programming/system/python_venv' % HOME : 'system-python',
+    '%s/backend' % VIVAREAL_SERVICES : 'vr-back'
 }
 
 
