@@ -35,7 +35,9 @@ show_pyvenv_prompt() {
 show_prompt() {
     user_and_host="$YELLOW\u$RED@$BLUE\h$NO_COLOR"
 
-    datetime="$CYAN$(python3 ~/programming/system/weekday.py `date +'%u'` shortname) `date '+%H:%M %b %d %Y'`$NO_COLOR"
+    weekday="$(python3 ~/programming/system/dates.py weekdays `date +'%u'` shortname)"
+    month="$(python3 ~/programming/system/dates.py months `date +'%m'` shortname)"
+    datetime="$CYAN$weekday `date '+%H:%M'` $month `date +'%d %Y'`$NO_COLOR"
 
     smart_path="$(python3 ~/programming/system/path_reducer.py `pwd` $HOME)"
     smart_path="$GREEN$smart_path$NO_COLOR"
