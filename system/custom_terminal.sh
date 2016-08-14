@@ -19,9 +19,10 @@ show_prompt() {
     git_prompt=""
     git_branch="$(__git_ps1 "(%s)")"
     if [ ! -z "$git_branch" ]; then
-        git_branch="`git branch | grep "\* " | awk '{print $2}'`"
-        git_branch="`echo $git_branch | sed 's/ //g'`"
-        git_prompt="($GREEN$git_branch$NO_COLOR) "
+        git_branch="`git branch | sed -n -e 's/^\* \(.*\)/\1/p'`"
+        if [ ! -z "$git_branch" ]; then
+            git_prompt="($GREEN$git_branch$NO_COLOR) "
+        fi
     fi
 
     PS1="$user_and_host $datetime $smart_path\n$git_prompt$ "
