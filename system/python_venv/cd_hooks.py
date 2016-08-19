@@ -7,7 +7,7 @@ local_venvs = {
     '%s/business' % CATHO_SERVICES : 'aptn-business',
     '%s/presentation' % CATHO_SERVICES : 'aptn-presentation',
     '%s/storage' % CATHO_SERVICES : 'aptn-storage',
-    '%s/programming/system/python_venv' % HOME : 'system-python',
+    '%s/devtools/system/python_venv' % HOME : 'system-python',
     '%s/backend' % VIVAREAL_SERVICES : 'vr-back',
     '%s/sower' % VIVAREAL_SERVICES : 'vr-sower'
 }
