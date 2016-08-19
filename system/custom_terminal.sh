@@ -27,7 +27,7 @@ show_pyvenv_prompt() {
     pyenv_prompt="$(python3 ~/devtools/system/pyvenv_detection.py $HOME)"
 
     if [ ! -z "$pyenv_prompt" ]; then
-        pyenv_prompt="$WHITE.venv:$BLUE$pyenv_prompt$NO_COLOR"
+        pyenv_prompt="$WHITE.py:$BLUE$pyenv_prompt$NO_COLOR"
         echo "$pyenv_prompt "
     fi
 }
@@ -61,3 +61,5 @@ trap show_prompt SIGINT
 trap show_prompt SIGQUIT
 trap show_prompt SIGTSTP
 trap show_prompt SIGCHLD # made the branch be updated
+
+alias xclip="xargs echo -n | xclip -selection clipboard"
