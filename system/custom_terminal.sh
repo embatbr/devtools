@@ -3,6 +3,8 @@
 # in the .bashrc insert `source /home/embat/tools/system/custom_terminal.sh`
 
 
+SYSTEM_NAME="$(uname -s)"
+
 RED="\[\033[31m\]"
 YELLOW="\[\033[33m\]"
 GREEN="\[\033[32m\]"
@@ -11,17 +13,24 @@ CYAN="\[\033[36m\]"
 WHITE="\[\033[97m\]"
 NO_COLOR="\[\033[00m\]"
 
-show_git_prompt() {
-    git_prompt=""
-    git_branch="$(__git_ps1 "(%s)")"
-    if [ ! -z "$git_branch" ]; then
-        git_branch="`git branch | sed -n -e 's/^\* \(.*\)/\1/p'`"
+if [ "$SYSTEM_NAME" == "Darwin" ]
+then
+    show_git_prompt() {
+        echo ""
+    }
+else
+    show_git_prompt() {
+        git_prompt=""
+        git_branch="$(__git_ps1 "(%s)")"
         if [ ! -z "$git_branch" ]; then
-            git_prompt="$WHITE.git:$GREEN$git_branch$NO_COLOR"
-            echo "$git_prompt "
+            git_branch="`git branch | sed -n -e 's/^\* \(.*\)/\1/p'`"
+            if [ ! -z "$git_branch" ]; then
+                git_prompt="$WHITE.git:$GREEN$git_branch$NO_COLOR"
+                echo "$git_prompt "
+            fi
         fi
-    fi
-}
+    }
+fi
 
 show_pyvenv_prompt() {
     pyenv_prompt="$(python3 /home/embat/tools/system/pyvenv_detection.py $HOME)"

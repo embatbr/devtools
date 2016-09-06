@@ -4,11 +4,11 @@
 
 
 function connect_to_redshift() {
-    REDSHIFT_HOST="$(cat /home/embat/my_credentials.json | jq -r '.aws.redshift.host')"
-    REDSHIFT_PORT="$(cat /home/embat/my_credentials.json | jq -r '.aws.redshift.port')"
-    REDSHIFT_DATABASE="$(cat /home/embat/my_credentials.json | jq -r '.aws.redshift.database')"
-    REDSHIFT_USER="$(cat /home/embat/my_credentials.json | jq -r '.aws.redshift.user')"
-    cat /home/embat/my_credentials.json | jq -r '.aws.redshift.password' | pbcopy
+    REDSHIFT_HOST="$(cat ~/custom-credentials/redshift.json | jq -r '.host')"
+    REDSHIFT_PORT="$(cat ~/custom-credentials/redshift.json | jq -r '.port')"
+    REDSHIFT_DATABASE="$(cat ~/custom-credentials/redshift.json | jq -r '.database')"
+    REDSHIFT_USER="$(cat ~/custom-credentials/redshift.json | jq -r '.user')"
+    cat ~/custom-credentials/redshift.json | jq -r '.password' | pbcopy
 
     psql -U $REDSHIFT_USER -p $REDSHIFT_PORT -d $REDSHIFT_DATABASE -h $REDSHIFT_HOST
 
