@@ -1,13 +1,13 @@
 HOME = '/home/embat'
-CATHO_SERVICES = '%s/data/professional/Catho/appletini/services' % HOME
-VIVAREAL_SERVICES = '%s/data/professional/VivaReal/solution' % HOME
-DJANGO_TUTO = '%s/data/workspace/django-tuto' % HOME
+CATHO_SERVICES = '%s/professional/Catho/appletini/services' % HOME
+VIVAREAL_SERVICES = '%s/professional/VivaReal/solution' % HOME
+DJANGO_TUTO = '%s/workspace/django-tuto' % HOME
 
 local_venvs = {
     '%s/business' % CATHO_SERVICES : 'aptn-business',
     '%s/presentation' % CATHO_SERVICES : 'aptn-presentation',
     '%s/storage' % CATHO_SERVICES : 'aptn-storage',
-    '%s/devtools/system/python_venv' % HOME : 'system-python',
+    '%s/tools/system/python_venv' % HOME : 'system-python',
     '%s/backend' % VIVAREAL_SERVICES : 'vr-back',
     '%s/sower' % VIVAREAL_SERVICES : 'vr-sower'
 }

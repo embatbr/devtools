@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# in the .bashrc insert `source ~/devtools/system/custom_terminal.sh`
+# in the .bashrc insert `source /home/embat/tools/system/custom_terminal.sh`
 
 
 RED="\[\033[31m\]"
@@ -24,7 +24,7 @@ show_git_prompt() {
 }
 
 show_pyvenv_prompt() {
-    pyenv_prompt="$(python3 ~/devtools/system/pyvenv_detection.py $HOME)"
+    pyenv_prompt="$(python3 /home/embat/tools/system/pyvenv_detection.py $HOME)"
 
     if [ ! -z "$pyenv_prompt" ]; then
         pyenv_prompt="$WHITE.py:$BLUE$pyenv_prompt$NO_COLOR"
@@ -35,11 +35,11 @@ show_pyvenv_prompt() {
 show_prompt() {
     user_and_host="$YELLOW\u$WHITE@$GREEN\h$NO_COLOR"
 
-    weekday="$(python3 ~/devtools/system/dates.py weekdays `date +'%u'` shortname)"
-    month="$(python3 ~/devtools/system/dates.py months `date +'%m'` shortname)"
+    weekday="$(python3 /home/embat/tools/system/dates.py weekdays `date +'%u'` shortname)"
+    month="$(python3 /home/embat/tools/system/dates.py months `date +'%m'` shortname)"
     datetime="$CYAN$weekday `date '+%H:%M'` $month `date +'%d %Y'`$NO_COLOR"
 
-    smart_path="$(python3 ~/devtools/system/path_reducer.py `pwd` $HOME)"
+    smart_path="$(python3 /home/embat/tools/system/path_reducer.py `pwd` $HOME)"
     smart_path="$YELLOW$smart_path$NO_COLOR"
 
     git_prompt="$(show_git_prompt)"
